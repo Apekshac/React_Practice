@@ -5,13 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="App.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
+    <!-- <script src="App.js"></script> -->
 </head>
 <body>
     <div>"React Application"</div>
-    <button onclick="addElement()">Click</button>
-    <div class='root'>
-    </div>
+    <input type="text" oninput="addElement()"></input>
+    <!-- <button onclick="addElement()">Click</button> -->
+    <div id='root'/>
+    <script type="text/babel">
+    class Table extends React.Component {
+        // const state= {
+        //     value:'name'
+        // }
+        render() {
+          return (
+            <table >
+                <tbody>
+                <tr>
+                    <th>{this.props.name}</th>
+                  </tr>
+                  </tbody>
+            </table>
+          );
+        }
+      }
+      
+    //   function setState()
+    //   {
+    //     value: document.getElementById("input").value
+    //   }
+     function addElement() {
+         // setState()
+        ReactDOM.render(
+          <Table name={event.target.value}/>,
+          document.getElementById('root'));
+      }
+      
+    </script>
 </body>
 </html>
