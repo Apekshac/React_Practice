@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Apeksha Chitranshi|UI Enthusiast</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
+    
+    <!-- <script src="App.js"></script> -->
+</head>
+<body>
+     <!-- <div></div>  -->
+    <input type="number" oninput="addElement()"></input>
+    <!-- <button onclick="addElement()">Click</button> -->
+    <div id='root'/>
+    <script type="text/babel">
+    class Tab extends React.Component {
+        render() {
+          return (
+<div>
+    <div className="progress-bar progress-bar-striped active" role="progressbar"  aria-valuemin="0" aria-valuemax="100" style="width:10%">
+      {this.props.progresspercent}
+    </div>
+ </div>    
+          );
+        }
+      }
+      
+     function addElement() {
+         // setState()
+        ReactDOM.render(
+          <Tab progresspercent={event.target.value}/>,
+          document.getElementById('root'));
+      }
+      
+    </script>
+</body>
+</html>
